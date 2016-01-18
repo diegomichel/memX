@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tests
   resources :listitems
   resources :lists
   resources :users

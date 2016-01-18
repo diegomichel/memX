@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118040108) do
+ActiveRecord::Schema.define(version: 20160118040340) do
 
   create_table "listitems", force: :cascade do |t|
     t.text     "text"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20160118040108) do
   end
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id"
+
+  create_table "tests", force: :cascade do |t|
+    t.integer  "list_id"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tests", ["list_id"], name: "index_tests_on_list_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
