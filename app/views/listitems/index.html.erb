@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Listitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>List</th>
+      <th>Previous item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listitems.each do |listitem| %>
+      <tr>
+        <td><%= listitem.text %></td>
+        <td><%= listitem.list %></td>
+        <td><%= listitem.previous_item_id %></td>
+        <td><%= link_to 'Show', listitem %></td>
+        <td><%= link_to 'Edit', edit_listitem_path(listitem) %></td>
+        <td><%= link_to 'Destroy', listitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listitem', new_listitem_path %>

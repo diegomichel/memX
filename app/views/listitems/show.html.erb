@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @listitem.text %>
+</p>
+
+<p>
+  <strong>List:</strong>
+  <%= @listitem.list %>
+</p>
+
+<p>
+  <strong>Previous item:</strong>
+  <%= @listitem.previous_item_id %>
+</p>
+
+<%= link_to 'Edit', edit_listitem_path(@listitem) %> |
+<%= link_to 'Back', listitems_path %>
