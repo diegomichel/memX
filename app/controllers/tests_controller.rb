@@ -14,6 +14,7 @@ class TestsController < ApplicationController
 
   # GET /tests/new
   def new
+    @list = List.find_by_id(params['list_id'])
     @test = Test.new
   end
 
