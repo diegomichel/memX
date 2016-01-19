@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @user = User.new({name:'juan', email: 'juan@juan.com'})
+    @user = User.new(name: 'juan', email: 'juan@juan.com')
   end
 
   test "model validations" do
