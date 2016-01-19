@@ -80,6 +80,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diffy (3.1.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -235,6 +236,7 @@ DEPENDENCIES
   capistrano-rvm
   coffee-rails (~> 4.1.0)
   devise
+  diffy
   guard-livereload (~> 2.4)
   jbuilder (~> 2.0)
   jquery-rails
