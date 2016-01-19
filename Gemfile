@@ -42,4 +42,6 @@ group :development, :test do
   gem 'spring'
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'rack-livereload'
+  gem 'pry'
+  gem 'pry-rails'
 end
