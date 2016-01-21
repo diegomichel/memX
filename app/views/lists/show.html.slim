@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  = @list.title
+p
+  strong
+    | Items:
+  ol
+    - @list.listitems.each do |item|
+      li
+        = item.text
+.container
+  .row
+    .col-md-6
+      = link_to 'Destroy', @list, method: :delete, data: { confirm: 'Are you sure?' }
+    .col-md-6
+      = link_to 'Back', lists_path

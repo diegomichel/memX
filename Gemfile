@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'slim-rails'
 gem 'diffy'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'

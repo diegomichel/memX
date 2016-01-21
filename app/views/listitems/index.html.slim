@@ -1,0 +1,31 @@
+p#notice
+  = notice
+h1
+  | Listing Listitems
+table
+  thead
+    tr
+      th
+        | Text
+      th
+        | List
+      th
+        | Previous item
+      th[colspan="3"]
+  tbody
+    - @listitems.each do |listitem|
+      tr
+        td
+          = listitem.text
+        td
+          = listitem.list
+        td
+          = listitem.previous_item_id
+        td
+          = link_to 'Show', listitem
+        td
+          = link_to 'Edit', edit_listitem_path(listitem)
+        td
+          = link_to 'Destroy', listitem, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Listitem', new_listitem_path

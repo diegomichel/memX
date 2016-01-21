@@ -1,0 +1,24 @@
+= form_for(@listitem) do |f|
+  - if @listitem.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@listitem.errors.count, "error")
+        |  prohibited this listitem from being saved:
+      ul
+        - @listitem.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :text
+    br
+    = f.text_area :text
+  .field
+    = f.label :list_id
+    br
+    = f.text_field :list_id
+  .field
+    = f.label :previous_item_id
+    br
+    = f.number_field :previous_item_id
+  .actions
+    = f.submit

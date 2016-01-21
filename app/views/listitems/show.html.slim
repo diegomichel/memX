@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | Text:
+  = @listitem.text
+p
+  strong
+    | List:
+  = @listitem.list
+p
+  strong
+    | Previous item:
+  = @listitem.previous_item_id
+= link_to 'Edit', edit_listitem_path(@listitem)
+|  | 
+= link_to 'Back', listitems_path
