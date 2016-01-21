@@ -14,7 +14,6 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.title %></td>
-        <td><%= list.user %></td>
         <td><%= link_to 'Show', list %></td>
         <td><%= link_to 'New Test', new_list_test_path(list) %></td>
       </tr>
