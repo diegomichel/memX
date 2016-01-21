@@ -1,8 +1,8 @@
 # A list contains the items to memorize
 class List < ActiveRecord::Base
   belongs_to :user
-  has_many :listitems
-  has_many :tests
+  has_many :listitems, dependent: :destroy
+  has_many :tests, dependent: :destroy
 
   validates :user_id, presence: true
 
