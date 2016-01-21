@@ -18,10 +18,7 @@ table
         td
           = test.text
         td
-          = link_to 'Show', test
+          = link_to 'Show', list_test_path(test.list, test)
         td
-          = link_to 'Edit', edit_test_path(test)
-        td
-          = link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Test', new_test_path
+= link_to 'New Test', new_list_test_path

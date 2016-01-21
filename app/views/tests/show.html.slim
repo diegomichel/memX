@@ -1,13 +1,10 @@
-p#notice
-  = notice
 p
-  strong
-    | List:
-  = @test.list
+  = @test.list.title
 p
-  strong
-    | Text:
-  = @test.text
-= link_to 'Edit', edit_test_path(@test)
-|  | 
-= link_to 'Back', tests_path
+  div.container
+    div.row
+      div.col-xs-6
+        = @test.diff.left.html_safe
+      div.com-xs-6
+        = @test.diff.right.html_safe
+= link_to 'Back', lists_path
