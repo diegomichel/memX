@@ -12,9 +12,10 @@ class Test < ActiveRecord::Base
   end
 
   def score
-    lines = list.text.count("\\n\\r")
-    unchanged = diff.left.count("unchanged")
-    inserts = diff.left.count("ins")
-    deletes = diff.left.count("del")
+    lines = list.text.lines.count
+    unchanged = diff.left.count_word("unchanged")
+    inserts = diff.left.count_word("ins")
+    deletes = diff.left.count_word("del")
+    100/lines*unchanged if lines && unchanged && lines > 0
   end
 end
