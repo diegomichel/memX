@@ -14,8 +14,12 @@ table.table.table-hover
         td
           = list.title
         td
-          = link_to 'Show', list
+          = link_to 'Practice', list
         td
-          = link_to 'New Test', new_list_test_path(list)
+          = link_to 'Test', new_list_test_path(list)
+        td
+          - list.tests.each do |test|
+            |
+            = test.score
 br
 = link_to 'New List', new_list_path
