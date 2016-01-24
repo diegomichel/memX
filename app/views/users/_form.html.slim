@@ -16,5 +16,19 @@
     = f.label :email
     br
     = f.text_field :email
+    .container-fluid
+      .row
+        .col-xs-6
+          p Number of days to schedule next test depending on level
+            You will jump from level to the next if you get 100% score
+            or Downgrade if you dont :)
+          - @user.levels.split(",").each_with_index do |level, index|
+            .row
+              .col-xs-4
+                .field
+                  div.input-group
+                    div.input-group-addon
+                      = "L#{index+1}"
+                    input.form-control type="number" step=0.1 value=level name="levels[]"
   .actions
     = f.submit

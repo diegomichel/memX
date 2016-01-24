@@ -7,7 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    .container
+    .container-fuild
       .row
         .col-md-4
 
@@ -16,7 +16,15 @@ html
         .col-md-4
           p.text-xs-right
             - if user_signed_in?
-              = link_to 'Log Out', destroy_user_session_path, method: :delete
+              = link_to(edit_user_path(current_user),
+                        class: 'btn btn-warning',
+                        title: 'Edit Profile') do
+                i.fa.fa-sliders.fa-1x
+              = link_to(destroy_user_session_path,
+                        method: :delete,
+                        class: 'btn btn-danger',
+                        title: 'Log Out') do
+                i.fa.fa-chain-broken.fa-1x
             - else
               = link_to('login', new_user_session_path)
     - if notice
