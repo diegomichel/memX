@@ -1,5 +1,4 @@
-p#notice
-  = notice
+input type="hidden" value=@list.timers.last.id
 p
   = @list.title
 p
@@ -12,6 +11,7 @@ p
 .container
   .row
     .col-md-6
-      = link_to 'Destroy', @list, method: :delete, data: { confirm: 'Are you sure?' }
-    .col-md-6
-      = link_to 'Back', lists_path
+      = link_to(lists_path, title: 'Go back ignore timer') do
+        i.fa.fa-arrow-left.fa-2x
+      = link_to(timer_path(@list.timers.last), title: 'Stop timer') do
+        i.fa.fa-clock-o.fa-2x
