@@ -1,0 +1,21 @@
+= form_for @timer do |f|
+  - if @timer.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@timer.errors.count, "error")} prohibited this timer from being saved:"
+      ul
+        - @timer.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :start
+    = f.datetime_select :start
+  .field
+    = f.label :end
+    = f.datetime_select :end
+  .field
+    = f.label :list
+    = f.text_field :list
+  .field
+    = f.label :test
+    = f.text_field :test
+  .actions = f.submit

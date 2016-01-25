@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :timers
   devise_for :users
   resources :listitems
   resources :lists do

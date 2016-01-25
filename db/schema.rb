@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124021506) do
+ActiveRecord::Schema.define(version: 20160125005512) do
 
   create_table "levels", force: :cascade do |t|
     t.float    "days"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 20160124021506) do
   end
 
   add_index "tests", ["list_id"], name: "index_tests_on_list_id"
+
+  create_table "timers", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.integer  "list_id"
+    t.integer  "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "timers", ["list_id"], name: "index_timers_on_list_id"
+  add_index "timers", ["test_id"], name: "index_timers_on_test_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

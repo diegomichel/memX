@@ -1,0 +1,27 @@
+h1 Listing timers
+
+table
+  thead
+    tr
+      th Start
+      th End
+      th List
+      th Test
+      th
+      th
+      th
+
+  tbody
+    - @timers.each do |timer|
+      tr
+        td = timer.start
+        td = timer.end
+        td = timer.list
+        td = timer.test
+        td = link_to 'Show', timer
+        td = link_to 'Edit', edit_timer_path(timer)
+        td = link_to 'Destroy', timer, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Timer', new_timer_path
