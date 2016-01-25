@@ -3,6 +3,7 @@ class List < ActiveRecord::Base
   belongs_to :user
   has_many :listitems, dependent: :destroy
   has_many :tests, dependent: :destroy
+  has_many :timers, dependent: :destroy
 
   validates :user_id, presence: true
 

@@ -11,12 +11,14 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+    @test.timers.new({start:Time.now}).save
   end
 
   # GET /tests/new
   def new
     @list = List.find_by_id(params['list_id'])
     @test = @list.tests.build
+    @test.timers.new({start:Time.now}).save
   end
 
   # GET /tests/1/edit
@@ -46,8 +48,9 @@ class TestsController < ApplicationController
   def update # rubocop:disable Metrics/MethodLength
     respond_to do |format|
       if @test.update(test_params)
+         @test.timers.last.update({end: Time.now})
         format.html do
-          redirect_to @test, notice: 'Test was successfully updated.'
+          redirect_to list_test_path, notice: 'Test was successfully updated.'
         end
         format.json { render :show, status: :ok, location: @test }
       else

@@ -12,6 +12,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @list.timers.new({start:Time.now}).save
   end
 
   # GET /lists/new
